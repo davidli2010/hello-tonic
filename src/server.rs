@@ -2,7 +2,6 @@ use tonic::{transport::Server, Request, Response, Status};
 
 use hello::greeter_server::{Greeter, GreeterServer};
 use hello::{HelloReply, HelloRequest};
-use tonic::transport::NamedService;
 
 mod hello;
 
@@ -22,10 +21,6 @@ impl Greeter for MyGreeter {
         };
         Ok(Response::new(reply))
     }
-}
-
-impl<T: Greeter> NamedService for GreeterServer<T> {
-    const NAME: &'static str = "GreeterServer";
 }
 
 #[tokio::main]

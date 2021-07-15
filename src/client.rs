@@ -1,16 +1,7 @@
 use hello::greeter_client::GreeterClient;
 use hello::HelloRequest;
-use tonic::transport::Channel;
 
 mod hello;
-
-impl GreeterClient<Channel> {
-    pub async fn connect(url: &str) -> Result<Self, Box<dyn std::error::Error>> {
-        let endpoint = Channel::builder(url.parse()?);
-        let channel = endpoint.connect().await?;
-        Ok(GreeterClient::new(channel))
-    }
-}
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {

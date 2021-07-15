@@ -9,7 +9,7 @@ prost = "0.8.0"
 tokio = { version = "1.8.1", features = ["rt-multi-thread", "macros"] }
 
 [build-dependencies]
-tonic-build = { version = "0.5.0", default-features = false, features = ["prost", "rustfmt"] }
+tonic-build = "0.5.0"
 
 [[bin]]
 name = "hello-server"
