@@ -1,5 +1,7 @@
 # hello-tonic
 
+Hello example copied from `tonic/examples/helloworld`.
+
 ## Client
 
 ```shell
